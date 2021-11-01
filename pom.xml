@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.3</version>
+    </parent>
+
+    <groupId>org.dzmitry.kapachou</groupId>
+    <artifactId>rsocket-app</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+
+    <modules>
+        <module>rsocket-server</module>
+        <module>rsocket-request-response-client</module>
+        <module>rsocket-fire-forget-client</module>
+        <module>rsocket-channel-client</module>
+        <module>rsocket-stream-client</module>
+        <module>common-model</module>
+    </modules>
+
+    <developers>
+        <developer>
+            <id>timmykopachev</id>
+            <name>Dzmitry Kopachev</name>
+            <email>timmy.kopachev@gmail.com</email>
+        </developer>
+    </developers>
+
+    <properties>
+        <encoding>UTF-8</encoding>
+        <version>1.0</version>
+        <java.version>15</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- common-model lib -->
+        <dependency>
+            <groupId>org.dzmitry.kapachou</groupId>
+            <artifactId>common-model</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!-- Spring Boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <!-- RSocket -->
+        <dependency>
+            <groupId>io.rsocket</groupId>
+            <artifactId>rsocket-core</artifactId>
+            <version>0.11.13</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rsocket</groupId>
+            <artifactId>rsocket-transport-netty</artifactId>
+            <version>0.11.13</version>
+        </dependency>
+        <!-- web spring -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

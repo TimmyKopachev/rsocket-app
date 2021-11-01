@@ -1,0 +1,11 @@
+application:
+  tcp:
+    server:
+      details:
+        port: 8081
+        address: localhost
+
+  #Application
+  application:
+    name: rsocket-server
+

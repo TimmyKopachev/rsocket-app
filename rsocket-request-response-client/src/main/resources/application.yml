@@ -1,0 +1,10 @@
+server:
+  port: 6565
+
+application:
+  tcp:
+    server:
+      details:
+        port: 8081
+        address: localhost
+
