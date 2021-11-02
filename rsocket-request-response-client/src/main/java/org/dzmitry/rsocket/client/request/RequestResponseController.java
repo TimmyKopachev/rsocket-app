@@ -41,11 +41,12 @@ public class RequestResponseController {
 
         PayloadTransformation<Player> playerTransform = new PayloadTransformation<>(Player.class);
 
-        gameRSocketClient.getSocket().requestResponse(DefaultPayload.create(requestByteArray))
-                .subscribe(payload -> playerEventRequest.setPlayer(playerTransform.transformByteArrayToData(payload.getData().array())));
+        return gameRSocketClient.getSocket().requestResponse(DefaultPayload.create(requestByteArray))
+                .map(payload -> playerTransform.transformByteArrayToData(payload.getData().array()))
+                .doOnNext(player -> playerEventRequest.setPlayer(player));
+
         // alternative to custom object serialization:
         // DefaultPayload.create(payload).getDataUtf8()
-        return Mono.just(playerEventRequest.getPlayer());
     }
 
     PlayerEventRequest createDummyPlayerEventRequest() {
