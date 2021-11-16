@@ -1,11 +1,12 @@
-application:
-  tcp:
+server:
+  port: 9090
+
+spring:
+  rsocket:
     server:
-      details:
-        port: 8081
-        address: localhost
+      port: 9092
+      transport: websocket
+      mapping-path: /rsocket-server
 
-  #Application
-  application:
-    name: rsocket-server
-
+  main:
+    lazy-initialization: true

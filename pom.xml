@@ -16,10 +16,7 @@
 
     <modules>
         <module>rsocket-server</module>
-        <module>rsocket-request-response-client</module>
-        <module>rsocket-fire-forget-client</module>
-        <module>rsocket-channel-client</module>
-        <module>rsocket-stream-client</module>
+        <module>rsocket-client</module>
         <module>common-model</module>
     </modules>
 
@@ -61,14 +58,8 @@
         </dependency>
         <!-- RSocket -->
         <dependency>
-            <groupId>io.rsocket</groupId>
-            <artifactId>rsocket-core</artifactId>
-            <version>0.11.13</version>
-        </dependency>
-        <dependency>
-            <groupId>io.rsocket</groupId>
-            <artifactId>rsocket-transport-netty</artifactId>
-            <version>0.11.13</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-rsocket</artifactId>
         </dependency>
         <!-- web spring -->
         <dependency>
